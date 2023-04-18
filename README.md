@@ -8,11 +8,17 @@ A combination of C++ and Python to expose an simple API written in C++ to Python
 
 - Meson/CMake
 - pybind11
-  - for Meson: `pip install pybind11`,
+  - for Meson and manual building: `pip install pybind11`,
   - for CMake: `git submodule update --init --recursive --remote`
 - C++11 compatible compiler (Clang or GCC on Linux, MSVC on Windows)
 
 ## Building
+
+### Manually
+
+```shell
+c++ -O3 -Wall -shared -std=c++11 -fPIC $(python3 -m pybind11 --includes) <source.cpp> -o <module_name>$(python3-config --extension-suffix)
+```
 
 ### Meson
 

@@ -17,3 +17,6 @@ target_link_libraries(api PUBLIC api_lib)
 
 add_executable(cpp-client main.cpp)
 target_link_libraries(cpp-client PUBLIC api_lib)
+
+# examples
+pybind11_add_module(cmake_example examples/cmake/main.cpp)

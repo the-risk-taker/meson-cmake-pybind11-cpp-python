@@ -21,3 +21,10 @@ executable('cpp-client',
     include_directories : ['api'],
     link_with : api_lib,
 )
+
+# examples
+python_installation.extension_module('meson_example', 
+    sources : ['examples/meson/main.cpp'],
+    include_directories : pybind11_includes,
+    dependencies : python_installation.dependency(),
+)
